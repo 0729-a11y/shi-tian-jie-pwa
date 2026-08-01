@@ -1,0 +1,107 @@
+:root {
+  /* ========== 是甜姐呀 — 多巴胺彩虹配色系统 V3 ========== */
+  /* 赤橙黄绿青蓝紫 + 粉色多色阶 */
+
+  /* 粉色 — 6 色阶（品种更丰富） */
+  --pink-600: #FF4F88;
+  --pink-500: #FF6B9B;
+  --pink-400: #FF8FB3;
+  --pink-300: #FFB3CC;
+  --pink-200: #FFD1E0;
+  --pink-100: #FFE4ED;
+  --pink-50: #FFF0F5;
+
+  /* 紫色 — 3 色阶 */
+  --purple-500: #A78BFA;
+  --purple-300: #C4B5FD;
+  --purple-100: #EDE9FE;
+
+  /* 彩虹色系 — 赤橙黄绿青蓝 */
+  --red-500: #FF6B6B;
+  --red-100: #FFE3E3;
+  --orange-500: #FF9F43;
+  --orange-100: #FFE8D1;
+  --yellow-500: #FFD166;
+  --yellow-400: #FFDA85;
+  --yellow-300: #FFE3A3;
+  --yellow-100: #FFF2D1;
+  --yellow-50: #FFF9E8;
+  --green-500: #66D2A0;
+  --green-400: #85DDB4;
+  --green-300: #A5E8C8;
+  --green-100: #DDF7EA;
+  --green-50: #EEFBF5;
+  --cyan-500: #4ECDC4;
+  --cyan-100: #D1F5F2;
+  --blue-500: #5B9BD5;
+  --blue-100: #D9EBF7;
+
+  --cream-50: #FFFBFC;
+  --cream-100: #FFF5F8;
+  --plum-900: #4A3F45;
+  --plum-700: #6B5E65;
+  --plum-500: #9E9197;
+  --plum-300: #D3C9CE;
+  --plum-100: #F2ECEE;
+
+  /* 语义别名 —— apply-html-head-contract 需要 */
+  --tianjie-background: var(--cream-50);
+  --tianjie-foreground: var(--plum-900);
+  --tianjie-card: #FFFFFF;
+  --tianjie-card-foreground: var(--plum-900);
+  --tianjie-popover: #FFFFFF;
+  --tianjie-popover-foreground: var(--plum-900);
+  --tianjie-primary: var(--pink-500);
+  --tianjie-primary-foreground: #FFFFFF;
+  --tianjie-muted: var(--pink-50);
+  --tianjie-muted-foreground: var(--plum-500);
+  --tianjie-border: var(--plum-100);
+  --tianjie-input: var(--cream-100);
+  --tianjie-ring: var(--pink-400);
+  --tianjie-radius-sm: 6px;
+  --tianjie-radius-md: 14px;
+  --tianjie-radius-lg: 20px;
+
+  /* 页面级快捷别名 */
+  --bg: var(--tianjie-background);
+  --foreground: var(--tianjie-foreground);
+  --surface: var(--tianjie-card);
+  --surface-2: var(--tianjie-muted);
+  --ink: var(--plum-900);
+  --ink-2: var(--plum-700);
+  --ink-3: var(--plum-500);
+  --line: var(--tianjie-border);
+  --brand: var(--pink-500);
+  --brand-soft: var(--pink-100);
+  --brand-ink: #FFFFFF;
+  --r-sm: var(--tianjie-radius-sm);
+  --r-md: var(--tianjie-radius-md);
+  --r-lg: var(--tianjie-radius-lg);
+  --r-pill: 999px;
+  --shadow-1: 0 2px 8px rgba(74, 63, 69, .05), 0 1px 3px rgba(74, 63, 69, .03);
+  --shadow-2: 0 8px 24px -6px rgba(255, 107, 155, .18);
+  --shadow-3: 0 18px 44px -12px rgba(74, 63, 69, .18);
+
+  /* 侧边栏渐变 — 紫粉 */
+  --sidebar-gradient: linear-gradient(180deg, var(--purple-500) 0%, var(--pink-300) 100%);
+
+  /* 模块情绪色 — 赤橙黄绿青蓝紫粉 */
+  --c-home: var(--purple-500);
+  --c-diet: var(--green-500);
+  --c-skincare: var(--pink-500);
+  --c-fitness: var(--orange-500);
+  --c-shaping: var(--cyan-500);
+  --c-finance: var(--yellow-500);
+  --c-stocks: var(--red-500);
+  --c-english: var(--blue-500);
+  --c-mood: var(--purple-500);
+
+  /* 状态色 */
+  --state-success: var(--green-500);
+  --state-warning: var(--yellow-500);
+  --state-error: #FF7A7A;
+  --state-info: var(--blue-500);
+
+  /* 字体 */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "MiSans", system-ui, sans-serif;
+}
