@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-title" content="是甜姐呀">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FF6B9B">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../assets/app-icon-512.jpg">
+    <link rel="apple-touch-startup-image" href="../assets/app-splash.jpg">
+    <title>股市行情 - 是甜姐呀</title>
+    <style id="theme-vars">
+:root {
+  /* ========== 是甜姐呀 — 多巴胺彩虹配色系统 V3 ========== */
+  /* 赤橙黄绿青蓝紫 + 粉色多色阶 */
+
+  /* 粉色 — 6 色阶（品种更丰富） */
+  --pink-600: #FF4F88;
+  --pink-500: #FF6B9B;
+  --pink-400: #FF8FB3;
+  --pink-300: #FFB3CC;
+  --pink-200: #FFD1E0;
+  --pink-100: #FFE4ED;
+  --pink-50: #FFF0F5;
+
+  /* 紫色 — 3 色阶 */
+  --purple-500: #A78BFA;
+  --purple-300: #C4B5FD;
+  --purple-100: #EDE9FE;
+
+  /* 彩虹色系 — 赤橙黄绿青蓝 */
+  --red-500: #FF6B6B;
+  --red-100: #FFE3E3;
+  --orange-500: #FF9F43;
+  --orange-100: #FFE8D1;
+  --yellow-500: #FFD166;
+  --yellow-400: #FFDA85;
+  --yellow-300: #FFE3A3;
+  --yellow-100: #FFF2D1;
+  --yellow-50: #FFF9E8;
+  --green-500: #66D2A0;
+  --green-400: #85DDB4;
+  --green-300: #A5E8C8;
+  --green-100: #DDF7EA;
+  --green-50: #EEFBF5;
+  --cyan-500: #4ECDC4;
+  --cyan-100: #D1F5F2;
+  --blue-500: #5B9BD5;
+  --blue-100: #D9EBF7;
+
+  --cream-50: #FFFBFC;
+  --cream-100: #FFF5F8;
+  --plum-900: #4A3F45;
+  --plum-700: #6B5E65;
+  --plum-500: #9E9197;
+  --plum-300: #D3C9CE;
+  --plum-100: #F2ECEE;
+
+  /* 语义别名 —— apply-html-head-contract 需要 */
+  --tianjie-background: var(--cream-50);
+  --tianjie-foreground: var(--plum-900);
+  --tianjie-card: #FFFFFF;
+  --tianjie-card-foreground: var(--plum-900);
+  --tianjie-popover: #FFFFFF;
+  --tianjie-popover-foreground: var(--plum-900);
+  --tianjie-primary: var(--pink-500);
+  --tianjie-primary-foreground: #FFFFFF;
+  --tianjie-muted: var(--pink-50);
+  --tianjie-muted-foreground: var(--plum-500);
+  --tianjie-border: var(--plum-100);
+  --tianjie-input: var(--cream-100);
+  --tianjie-ring: var(--pink-400);
+  --tianjie-radius-sm: 6px;
+  --tianjie-radius-md: 14px;
+  --tianjie-radius-lg: 20px;
+
+  /* 页面级快捷别名 */
+  --bg: var(--tianjie-background);
+  --foreground: var(--tianjie-foreground);
+  --surface: var(--tianjie-card);
+  --surface-2: var(--tianjie-muted);
+  --ink: var(--plum-900);
+  --ink-2: var(--plum-700);
+  --ink-3: var(--plum-500);
+  --line: var(--tianjie-border);
+  --brand: var(--pink-500);
+  --brand-soft: var(--pink-100);
+  --brand-ink: #FFFFFF;
+  --r-sm: var(--tianjie-radius-sm);
+  --r-md: var(--tianjie-radius-md);
+  --r-lg: var(--tianjie-radius-lg);
+  --r-pill: 999px;
+  --shadow-1: 0 2px 8px rgba(74, 63, 69, .05), 0 1px 3px rgba(74, 63, 69, .03);
+  --shadow-2: 0 8px 24px -6px rgba(255, 107, 155, .18);
+  --shadow-3: 0 18px 44px -12px rgba(74, 63, 69, .18);
+
+  /* 侧边栏渐变 — 紫粉 */
+  --sidebar-gradient: linear-gradient(180deg, var(--purple-500) 0%, var(--pink-300) 100%);
+
+  /* 模块情绪色 — 赤橙黄绿青蓝紫粉 */
+  --c-home: var(--purple-500);
+  --c-diet: var(--green-500);
+  --c-skincare: var(--pink-500);
+  --c-fitness: var(--orange-500);
+  --c-shaping: var(--cyan-500);
+  --c-finance: var(--yellow-500);
+  --c-stocks: var(--red-500);
+  --c-english: var(--blue-500);
+  --c-mood: var(--purple-500);
+
+  /* 状态色 */
+  --state-success: var(--green-500);
+  --state-warning: var(--yellow-500);
+  --state-error: #FF7A7A;
+  --state-info: var(--blue-500);
+
+  /* 字体 */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "MiSans", system-ui, sans-serif;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--tianjie-background);
+    --color-foreground: var(--tianjie-foreground);
+    --color-card: var(--tianjie-card);
+    --color-card-foreground: var(--tianjie-card-foreground);
+    --color-popover: var(--tianjie-popover);
+    --color-popover-foreground: var(--tianjie-popover-foreground);
+    --color-primary: var(--tianjie-primary);
+    --color-primary-foreground: var(--tianjie-primary-foreground);
+    --color-muted: var(--tianjie-muted);
+    --color-muted-foreground: var(--tianjie-muted-foreground);
+    --color-border: var(--tianjie-border);
+    --color-input: var(--tianjie-input);
+    --color-ring: var(--tianjie-ring);
+    --radius-sm: var(--tianjie-radius-sm);
+    --radius-md: var(--tianjie-radius-md);
+    --radius-lg: var(--tianjie-radius-lg);
+  }
+  @layer base {
+    body { background: var(--tianjie-background); color: var(--tianjie-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--tianjie-background); }
+      .text-background { color: var(--tianjie-background); }
+      .border-background { border-color: var(--tianjie-background); }
+      .ring-background { --tw-ring-color: var(--tianjie-background); }
+      .bg-foreground { background-color: var(--tianjie-foreground); }
+      .text-foreground { color: var(--tianjie-foreground); }
+      .border-foreground { border-color: var(--tianjie-foreground); }
+      .ring-foreground { --tw-ring-color: var(--tianjie-foreground); }
+      .bg-card { background-color: var(--tianjie-card); }
+      .text-card { color: var(--tianjie-card); }
+      .border-card { border-color: var(--tianjie-card); }
+      .ring-card { --tw-ring-color: var(--tianjie-card); }
+      .bg-card-foreground { background-color: var(--tianjie-card-foreground); }
+      .text-card-foreground { color: var(--tianjie-card-foreground); }
+      .border-card-foreground { border-color: var(--tianjie-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--tianjie-card-foreground); }
+      .bg-popover { background-color: var(--tianjie-popover); }
+      .text-popover { color: var(--tianjie-popover); }
+      .border-popover { border-color: var(--tianjie-popover); }
+      .ring-popover { --tw-ring-color: var(--tianjie-popover); }
+      .bg-popover-foreground { background-color: var(--tianjie-popover-foreground); }
+      .text-popover-foreground { color: var(--tianjie-popover-foreground); }
+      .border-popover-foreground { border-color: var(--tianjie-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--tianjie-popover-foreground); }
+      .bg-primary { background-color: var(--tianjie-primary); }
+      .text-primary { color: var(--tianjie-primary); }
+      .border-primary { border-color: var(--tianjie-primary); }
+      .ring-primary { --tw-ring-color: var(--tianjie-primary); }
+      .bg-primary-foreground { background-color: var(--tianjie-primary-foreground); }
+      .text-primary-foreground { color: var(--tianjie-primary-foreground); }
+      .border-primary-foreground { border-color: var(--tianjie-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--tianjie-primary-foreground); }
+      .bg-muted { background-color: var(--tianjie-muted); }
+      .text-muted { color: var(--tianjie-muted); }
+      .border-muted { border-color: var(--tianjie-muted); }
+      .ring-muted { --tw-ring-color: var(--tianjie-muted); }
+      .bg-muted-foreground { background-color: var(--tianjie-muted-foreground); }
+      .text-muted-foreground { color: var(--tianjie-muted-foreground); }
+      .border-muted-foreground { border-color: var(--tianjie-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--tianjie-muted-foreground); }
+      .bg-border { background-color: var(--tianjie-border); }
+      .text-border { color: var(--tianjie-border); }
+      .border-border { border-color: var(--tianjie-border); }
+      .ring-border { --tw-ring-color: var(--tianjie-border); }
+      .bg-input { background-color: var(--tianjie-input); }
+      .text-input { color: var(--tianjie-input); }
+      .border-input { border-color: var(--tianjie-input); }
+      .ring-input { --tw-ring-color: var(--tianjie-input); }
+      .bg-ring { background-color: var(--tianjie-ring); }
+      .text-ring { color: var(--tianjie-ring); }
+      .border-ring { border-color: var(--tianjie-ring); }
+      .ring-ring { --tw-ring-color: var(--tianjie-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body>
+<div class="app-frame">
+  <aside class="app-sidebar" data-shared="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-avatar"><i data-lucide="candy"></i></div>
+      <div class="brand-title">是甜姐呀</div>
+      <div class="brand-subtitle">健康·自律·记录</div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-row" data-nav-key="home" data-active="false" data-dom-id="nav-home"><span class="nav-icon" style="--module-color:var(--c-home)"><i data-lucide="layout-grid"></i></span><span class="nav-label whitespace-nowrap">首页</span></a>
+      <a href="diet.html" class="nav-row" data-nav-key="diet" data-active="false" data-dom-id="nav-diet"><span class="nav-icon" style="--module-color:var(--c-diet)"><i data-lucide="utensils"></i></span><span class="nav-label whitespace-nowrap">饮食日记</span></a>
+      <a href="skincare.html" class="nav-row" data-nav-key="skincare" data-active="false" data-dom-id="nav-skincare"><span class="nav-icon" style="--module-color:var(--c-skincare)"><i data-lucide="sparkles"></i></span><span class="nav-label whitespace-nowrap">护肤打卡</span></a>
+      <a href="fitness.html" class="nav-row" data-nav-key="fitness" data-active="false" data-dom-id="nav-fitness"><span class="nav-icon" style="--module-color:var(--c-fitness)"><i data-lucide="dumbbell"></i></span><span class="nav-label whitespace-nowrap">运动健身</span></a>
+      <a href="shaping.html" class="nav-row" data-nav-key="shaping" data-active="false" data-dom-id="nav-shaping"><span class="nav-icon" style="--module-color:var(--c-shaping)"><i data-lucide="person-standing"></i></span><span class="nav-label whitespace-nowrap">塑形训练</span></a>
+      <a href="finance.html" class="nav-row" data-nav-key="finance" data-active="false" data-dom-id="nav-finance"><span class="nav-icon" style="--module-color:var(--c-finance)"><i data-lucide="wallet"></i></span><span class="nav-label whitespace-nowrap">记账理财</span></a>
+      <a href="stocks.html" class="nav-row" data-nav-key="stocks" data-active="true" data-dom-id="nav-stocks"><span class="nav-icon" style="--module-color:var(--c-stocks)"><i data-lucide="trending-up"></i></span><span class="nav-label whitespace-nowrap">股市行情</span></a>
+      <a href="english.html" class="nav-row" data-nav-key="english" data-active="false" data-dom-id="nav-english"><span class="nav-icon" style="--module-color:var(--c-english)"><i data-lucide="languages"></i></span><span class="nav-label whitespace-nowrap">每日英语</span></a>
+      <a href="mood.html" class="nav-row" data-nav-key="mood" data-active="false" data-dom-id="nav-mood"><span class="nav-icon" style="--module-color:var(--c-mood)"><i data-lucide="heart"></i></span><span class="nav-label whitespace-nowrap">今日心情</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="date-card">
+        <div class="date-label">今日日期</div>
+        <div class="date-value">2026年07月31日 周五</div>
+      </div>
+    </div>
+  </aside>
+  <main class="app-main">
+    <div class="page-header">
+      <div class="page-title">股市行情</div>
+      <div class="page-date" data-dom-id="page-date">日期加载中…</div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon-dot" style="--module-color:var(--c-stocks)"></span>今日大盘 <span style="margin-left:auto;font-size:11px;color:var(--ink-3)">数据来自腾讯财经 · 自动更新</span></div>
+      <div class="index-grid" id="index-board">
+        <div class="index-cell" data-code="s_sh000001">
+          <div class="index-name">上证指数</div>
+          <div class="index-value" id="idx-sh">—</div>
+          <div class="index-change" id="idx-sh-change">—</div>
+          <div class="index-amount" id="idx-sh-amount">—</div>
+        </div>
+        <div class="index-cell" data-code="s_sz399001">
+          <div class="index-name">深证成指</div>
+          <div class="index-value" id="idx-sz">—</div>
+          <div class="index-change" id="idx-sz-change">—</div>
+          <div class="index-amount" id="idx-sz-amount">—</div>
+        </div>
+        <div class="index-cell" data-code="s_sz399006">
+          <div class="index-name">创业板指</div>
+          <div class="index-value" id="idx-cy">—</div>
+          <div class="index-change" id="idx-cy-change">—</div>
+          <div class="index-amount" id="idx-cy-amount">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="note-tip"><i data-lucide="info"></i>行情数据来自腾讯财经公开接口，每 5 秒自动刷新</div>
+    <div class="card">
+      <div class="card-title"><span class="icon-dot" style="--module-color:var(--c-stocks)"></span>自选股</div>
+      <div id="watch-list"></div>
+      <button class="btn-add" id="btn-add-stock" style="--module-color:var(--c-stocks)"><i data-lucide="plus"></i>添加股票</button>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon-dot" style="--module-color:var(--c-stocks)"></span>观察笔记</div>
+      <textarea class="field-area" id="stock-note" placeholder="今日盘面观察…"></textarea>
+    </div>
+  </main>
+</div>
+<script>
+(function(){
+  var TODAY = new Date().toISOString().slice(0,10);
+  var KEY = 'tj_stocks_' + TODAY;
+  function loadData(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+  function saveData(d){ localStorage.setItem(KEY, JSON.stringify(d)); }
+  var DATA = loadData();
+  DATA.watchlist = Array.isArray(DATA.watchlist) ? DATA.watchlist : [];
+  DATA.note = typeof DATA.note === 'string' ? DATA.note : '';
+
+  function esc(v){ return String(v==null?'':v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function num(v){ var n=parseFloat(v); return isNaN(n)?0:n; }
+
+  /* ========== 大盘实时行情（腾讯财经） ========== */
+  var INDEX_MAP = {
+    'sh000001': {key:'sh', name:'上证指数'},
+    'sz399001': {key:'sz', name:'深证成指'},
+    'sz399006': {key:'cy', name:'创业板指'}
+  };
+  var INDEX_CODES = Object.keys(INDEX_MAP).join(',');
+  var POLL_INTERVAL = 5000;
+  var pollTimer = null;
+
+  function fmtIndex(n, digits){
+    if(n == null || isNaN(n)) return '—';
+    return (+n).toFixed(digits);
+  }
+
+  function setIndexColor(el, n){
+    el.classList.remove('up','down');
+    if(n > 0) el.classList.add('up');
+    else if(n < 0) el.classList.add('down');
+  }
+
+  function parseIndexData(){
+    for(var code in INDEX_MAP){
+      var info = INDEX_MAP[code];
+      var str = window['v_' + code];
+      var elVal = document.getElementById('idx-' + info.key);
+      var elChg = document.getElementById('idx-' + info.key + '-change');
+      var elAmt = document.getElementById('idx-' + info.key + '-amount');
+      if(!str || !elVal || !elChg || !elAmt) continue;
+      var parts = String(str).split('~');
+      if(parts.length < 35) continue;
+      var point = parseFloat(parts[3]);
+      var amount = parseFloat(parts[31]);
+      var pct = parseFloat(parts[32]);
+      elVal.textContent = fmtIndex(point, 2);
+      elChg.textContent = (pct >= 0 ? '+' : '') + fmtIndex(pct, 2) + '%';
+      elAmt.textContent = (amount >= 0 ? '+' : '') + fmtIndex(amount, 2);
+      setIndexColor(elChg, pct);
+      setIndexColor(elAmt, amount);
+    }
+  }
+
+  function loadIndexScript(){
+    var s = document.createElement('script');
+    s.src = 'https://qt.gtimg.cn/q=' + INDEX_CODES + '&_=' + Date.now();
+    s.async = true;
+    s.onload = function(){
+      parseIndexData();
+      if(s.parentNode) s.parentNode.removeChild(s);
+    };
+    s.onerror = function(){
+      if(s.parentNode) s.parentNode.removeChild(s);
+    };
+    document.head.appendChild(s);
+  }
+
+  function startIndexPoll(){
+    loadIndexScript();
+    if(pollTimer) clearInterval(pollTimer);
+    pollTimer = setInterval(loadIndexScript, POLL_INTERVAL);
+  }
+
+  function renderDate(){
+    var d = new Date();
+    var w = ['周日','周一','周二','周三','周四','周五','周六'][d.getDay()];
+    var s = d.getFullYear()+'年'+String(d.getMonth()+1).padStart(2,'0')+'月'+String(d.getDate()).padStart(2,'0')+'日 '+w;
+    var pe = document.querySelector('.page-date'); if(pe) pe.textContent = s;
+    var sv = document.querySelector('.sidebar-footer .date-value'); if(sv) sv.textContent = s;
+  }
+
+  function updatePnl(i){
+    var s = DATA.watchlist[i]; if(!s) return;
+    var el = document.querySelector('[data-pnl="'+i+'"]'); if(!el) return;
+    var buy = num(s.buy), now = num(s.now);
+    if(!buy || buy === 0 || !now){
+      el.textContent = '—';
+      el.className = 'stock-pnl';
+      return;
+    }
+    var pct = (now - buy) / buy * 100;
+    el.textContent = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+    el.className = 'stock-pnl ' + (pct >= 0 ? 'up' : 'down');
+  }
+
+  function renderWatch(){
+    var box = document.getElementById('watch-list');
+    if(!DATA.watchlist.length){
+      box.innerHTML = '<div class="empty-state"><i data-lucide="line-chart"></i>还没有添加自选股</div>';
+      return;
+    }
+    box.innerHTML = DATA.watchlist.map(function(s,i){
+      return '<div class="stock-row">' +
+        '<div class="stock-main">' +
+          '<input class="field-input" data-type="watch" data-i="'+i+'" data-k="code" placeholder="代码" value="'+esc(s.code)+'">' +
+          '<input class="field-input" data-type="watch" data-i="'+i+'" data-k="name" placeholder="名称" value="'+esc(s.name)+'">' +
+          '<button class="btn-del" data-del="watch" data-i="'+i+'" title="删除"><i data-lucide="trash-2"></i></button>' +
+        '</div>' +
+        '<div class="stock-sub">' +
+          '<input class="field-input field-price" data-type="watch" data-i="'+i+'" data-k="buy" type="number" inputmode="decimal" placeholder="买入价" value="'+esc(s.buy)+'">' +
+          '<input class="field-input field-price" data-type="watch" data-i="'+i+'" data-k="now" type="number" inputmode="decimal" placeholder="现价" value="'+esc(s.now)+'">' +
+          '<span class="stock-pnl" data-pnl="'+i+'">—</span>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+    for(var i=0;i<DATA.watchlist.length;i++){ updatePnl(i); }
+  }
+
+  function renderAll(){
+    renderWatch();
+    lucide.createIcons();
+  }
+
+  function focusNewRow(){
+    var el = document.querySelector('#watch-list .stock-row:last-child .field-input');
+    if(el){ try{ el.focus(); }catch(e){} }
+  }
+
+  document.addEventListener('input', function(ev){
+    var t = ev.target;
+    if(t.id === 'stock-note'){
+      DATA.note = t.value;
+      saveData(DATA);
+      return;
+    }
+    if(!t.dataset || t.dataset.type !== 'watch') return;
+    var i = +t.dataset.i, k = t.dataset.k;
+    if(!DATA.watchlist[i]) return;
+    DATA.watchlist[i][k] = t.value;
+    saveData(DATA);
+    if(k === 'buy' || k === 'now'){ updatePnl(i); }
+  });
+
+  document.addEventListener('keydown', function(ev){
+    if(ev.key !== 'Enter') return;
+    var t = ev.target;
+    if(!t.classList || !t.classList.contains('field-input')) return;
+    if(t.dataset && t.dataset.type === 'watch'){
+      ev.preventDefault();
+      DATA.watchlist.push({code:'',name:'',buy:'',now:''});
+      saveData(DATA);
+      renderWatch();
+      lucide.createIcons();
+      focusNewRow();
+    }
+  });
+
+  document.addEventListener('click', function(ev){
+    var b = ev.target.closest('[data-del]');
+    if(!b) return;
+    if(b.dataset.del !== 'watch') return;
+    var i = +b.dataset.i;
+    DATA.watchlist.splice(i,1);
+    saveData(DATA);
+    renderAll();
+  });
+
+  document.getElementById('btn-add-stock').addEventListener('click', function(){
+    DATA.watchlist.push({code:'',name:'',buy:'',now:''});
+    saveData(DATA);
+    renderWatch();
+    lucide.createIcons();
+    focusNewRow();
+  });
+
+  renderDate();
+  document.getElementById('stock-note').value = DATA.note;
+  startIndexPoll();
+  renderAll();
+  lucide.createIcons();
+})();
+</script>
+
+    <style id="critical-layout">
+      *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+      body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);min-height:100vh;overscroll-behavior:none;-webkit-overflow-scrolling:touch}
+      .app-frame{display:flex;width:100%;max-width:480px;margin:0 auto;min-height:100vh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+      .app-sidebar{width:80px;flex-shrink:0;background:linear-gradient(180deg,var(--purple-500) 0%,var(--pink-300) 100%);padding:14px 6px;display:flex;flex-direction:column;gap:10px}
+      .sidebar-brand{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:8px}
+      .brand-avatar{width:38px;height:38px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-1)}
+      .brand-avatar svg{width:20px;height:20px;color:var(--pink-500)}
+      .brand-title{font-size:12px;font-weight:700;color:#fff;text-align:center;word-break:keep-all}
+      .brand-subtitle{font-size:10px;color:rgba(255,255,255,.85);text-align:center}
+      .sidebar-nav{display:flex;flex-direction:column;gap:6px;flex:1}
+      .nav-row{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border-radius:12px;color:rgba(255,255,255,.92);text-decoration:none;transition:background .15s}
+      .nav-row[data-active="true"]{background:rgba(255,255,255,.28);color:#fff;font-weight:600}
+      .nav-icon{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;color:var(--module-color,var(--surface))}
+      .nav-row[data-active="true"] .nav-icon{background:rgba(255,255,255,.45);color:var(--module-color,var(--surface))}
+      .nav-icon svg{width:14px;height:14px}
+      .nav-label{font-size:10px;line-height:1.1;text-align:center;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+      .sidebar-footer{margin-top:auto}
+      .date-card{background:rgba(255,255,255,.25);border-radius:12px;padding:8px 4px;color:#fff;text-align:center}
+      .date-label{font-size:10px;opacity:.9}
+      .date-value{font-size:10px;font-weight:600;margin-top:4px;line-height:1.3}
+      .app-main{flex:1;padding:16px;overflow-y:auto}
+      .page-header{margin-bottom:16px}
+      .page-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.2}
+      .page-date{font-size:13px;color:var(--ink-2);margin-top:4px}
+      .card{background:var(--surface);border-radius:var(--r-lg);padding:16px;margin-bottom:12px;box-shadow:var(--shadow-1)}
+      .card-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+      .card-title .icon-dot{width:8px;height:8px;border-radius:50%;background:var(--module-color,var(--brand))}
+      .module-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+      .module-cell{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px;border-radius:var(--r-md);background:var(--surface);box-shadow:var(--shadow-1);text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+      .module-cell:hover{transform:translateY(-2px);box-shadow:var(--shadow-2)}
+      .module-cell .mod-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--module-soft,var(--brand-soft));color:var(--module-color,var(--brand))}
+      .module-cell .mod-icon svg{width:18px;height:18px}
+      .module-cell .mod-name{font-size:13px;font-weight:600}
+      .module-cell .mod-hint{font-size:11px;color:var(--ink-3)}
+      .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+      .kpi-cell{text-align:center;padding:12px 8px;background:var(--surface-2);border-radius:var(--r-md)}
+      .kpi-value{font-size:18px;font-weight:700;color:var(--ink)}
+      .kpi-label{font-size:11px;color:var(--ink-2);margin-top:4px}
+      .todo-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+      .todo-row:last-child{border-bottom:none;padding-bottom:0}
+      .todo-check{width:20px;height:20px;border-radius:6px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--surface)}
+      .todo-row.done .todo-check{background:var(--green-500);border-color:var(--green-500);color:#fff}
+      .todo-text{font-size:13px;color:var(--ink)}
+      .todo-row.done .todo-text{color:var(--ink-3);text-decoration:line-through}
+      .badge{display:inline-flex;align-items:center;padding:3px 8px;border-radius:var(--r-pill);font-size:11px;font-weight:500;background:var(--brand-soft);color:var(--brand)}
+      .index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+      .index-cell{padding:12px 8px;border-radius:var(--r-md);background:var(--surface-2);text-align:center}
+      .index-name{font-size:11px;color:var(--ink-2)}
+      .index-value{font-size:16px;font-weight:700;color:var(--ink);margin-top:4px}
+      .index-change{font-size:11px;font-weight:600;margin-top:2px}
+      .index-change.up{color:var(--state-error)}
+      .index-change.down{color:var(--green-500)}
+      .stock-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+      .stock-item:last-child{border-bottom:none;padding-bottom:0}
+      .stock-left{display:flex;flex-direction:column;gap:2px}
+      .stock-name{font-size:13px;font-weight:600;color:var(--ink)}
+      .stock-code{font-size:11px;color:var(--ink-3)}
+      .stock-right{text-align:right}
+      .stock-price{font-size:14px;font-weight:700;color:var(--ink)}
+      .stock-change{font-size:11px;font-weight:600}
+      .stock-change.up{color:var(--state-error)}
+      .stock-change.down{color:var(--green-500)}
+      .btn-primary{width:100%;margin-top:12px;padding:10px;border-radius:var(--r-md);border:none;background:var(--module-color,var(--brand));color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+      .btn-primary svg{width:16px;height:16px}
+    </style>
+    <style id="index-input-style">
+      .index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+      .index-cell{display:flex;flex-direction:column;gap:4px;padding:12px 6px;background:var(--surface-2);border-radius:var(--r-md);text-align:center}
+      .index-name{font-size:11px;color:var(--ink-3);line-height:1.2;margin-top:0}
+      .index-value{font-size:16px;font-weight:700;color:var(--ink);text-align:center;line-height:1.2;margin-top:0}
+      .index-change{font-size:12px;font-weight:700;text-align:center;line-height:1.2;margin-top:0}
+      .index-change.up{color:var(--red-500)}
+      .index-change.down{color:var(--green-500)}
+      .index-amount{font-size:10px;font-weight:500;text-align:center;color:var(--ink-2);line-height:1.2;margin-top:0}
+      .index-amount.up{color:var(--red-500)}
+      .index-amount.down{color:var(--green-500)}
+    </style>
+    <style id="app-interactive">
+      .field-input{width:100%;border:1px solid var(--line);border-radius:var(--r-md);padding:8px 10px;font-size:13px;color:var(--ink);background:var(--surface);outline:none;font-family:inherit;transition:border-color .15s,box-shadow .15s;min-width:0}
+      .field-input::placeholder{color:var(--plum-300)}
+      .field-input:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+      .field-area{width:100%;border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px;font-size:13px;color:var(--ink);background:var(--surface);outline:none;font-family:inherit;resize:vertical;min-height:90px;line-height:1.55}
+      .field-area::placeholder{color:var(--plum-300)}
+      .field-area:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+      .field-price{flex:1;min-width:0}
+      .btn-add{width:100%;margin-top:12px;padding:9px;border-radius:var(--r-md);border:1.5px dashed var(--module-color,var(--brand));background:transparent;color:var(--module-color,var(--brand));font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:background .15s}
+      .btn-add:hover{background:var(--brand-soft)}
+      .btn-add svg{width:14px;height:14px}
+      .btn-del{width:28px;height:28px;border-radius:50%;border:none;background:var(--surface-2);color:var(--ink-3);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s,color .15s}
+      .btn-del:hover{background:var(--red-100);color:var(--state-error)}
+      .btn-del svg{width:14px;height:14px}
+      .empty-state{text-align:center;padding:22px 8px;color:var(--ink-3);font-size:12px;line-height:1.6}
+      .empty-state [data-lucide]{width:26px;height:26px;color:var(--plum-300);margin:0 auto 8px;display:block}
+      .note-tip{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-3);background:var(--yellow-50);border:1px solid var(--yellow-100);border-radius:var(--r-md);padding:7px 10px;margin-bottom:12px;line-height:1.5}
+      .note-tip [data-lucide]{width:13px;height:13px;color:var(--orange-500);flex-shrink:0}
+      .stock-row{padding:10px 0;border-bottom:1px solid var(--line)}
+      .stock-row:last-child{border-bottom:none}
+      .stock-main{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+      .stock-main .field-input{flex:1;min-width:0}
+      .stock-sub{display:flex;gap:8px;align-items:center}
+      .stock-sub .field-input{flex:1;min-width:0}
+      .stock-pnl{flex:0 0 auto;min-width:64px;text-align:right;font-size:13px;font-weight:700;color:var(--ink-3)}
+      .stock-pnl.up{color:var(--red-500)}
+      .stock-pnl.down{color:var(--green-500)}
+    </style>
+<script src="../assets/pwa-register.js"></script>
+</body>
+</html>
