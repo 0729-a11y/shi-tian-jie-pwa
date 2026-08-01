@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-title" content="是甜姐呀">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FF6B9B">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../assets/app-icon-512.jpg">
+    <link rel="apple-touch-startup-image" href="../assets/app-splash.jpg">
+    <title>塑形训练 - 是甜姐呀</title>
+    <style id="theme-vars">
+:root {
+  /* ========== 是甜姐呀 — 多巴胺彩虹配色系统 V3 ========== */
+  /* 赤橙黄绿青蓝紫 + 粉色多色阶 */
+
+  /* 粉色 — 6 色阶（品种更丰富） */
+  --pink-600: #FF4F88;
+  --pink-500: #FF6B9B;
+  --pink-400: #FF8FB3;
+  --pink-300: #FFB3CC;
+  --pink-200: #FFD1E0;
+  --pink-100: #FFE4ED;
+  --pink-50: #FFF0F5;
+
+  /* 紫色 — 3 色阶 */
+  --purple-500: #A78BFA;
+  --purple-300: #C4B5FD;
+  --purple-100: #EDE9FE;
+
+  /* 彩虹色系 — 赤橙黄绿青蓝 */
+  --red-500: #FF6B6B;
+  --red-100: #FFE3E3;
+  --orange-500: #FF9F43;
+  --orange-100: #FFE8D1;
+  --yellow-500: #FFD166;
+  --yellow-400: #FFDA85;
+  --yellow-300: #FFE3A3;
+  --yellow-100: #FFF2D1;
+  --yellow-50: #FFF9E8;
+  --green-500: #66D2A0;
+  --green-400: #85DDB4;
+  --green-300: #A5E8C8;
+  --green-100: #DDF7EA;
+  --green-50: #EEFBF5;
+  --cyan-500: #4ECDC4;
+  --cyan-100: #D1F5F2;
+  --blue-500: #5B9BD5;
+  --blue-100: #D9EBF7;
+
+  --cream-50: #FFFBFC;
+  --cream-100: #FFF5F8;
+  --plum-900: #4A3F45;
+  --plum-700: #6B5E65;
+  --plum-500: #9E9197;
+  --plum-300: #D3C9CE;
+  --plum-100: #F2ECEE;
+
+  /* 语义别名 —— apply-html-head-contract 需要 */
+  --tianjie-background: var(--cream-50);
+  --tianjie-foreground: var(--plum-900);
+  --tianjie-card: #FFFFFF;
+  --tianjie-card-foreground: var(--plum-900);
+  --tianjie-popover: #FFFFFF;
+  --tianjie-popover-foreground: var(--plum-900);
+  --tianjie-primary: var(--pink-500);
+  --tianjie-primary-foreground: #FFFFFF;
+  --tianjie-muted: var(--pink-50);
+  --tianjie-muted-foreground: var(--plum-500);
+  --tianjie-border: var(--plum-100);
+  --tianjie-input: var(--cream-100);
+  --tianjie-ring: var(--pink-400);
+  --tianjie-radius-sm: 6px;
+  --tianjie-radius-md: 14px;
+  --tianjie-radius-lg: 20px;
+
+  /* 页面级快捷别名 */
+  --bg: var(--tianjie-background);
+  --foreground: var(--tianjie-foreground);
+  --surface: var(--tianjie-card);
+  --surface-2: var(--tianjie-muted);
+  --ink: var(--plum-900);
+  --ink-2: var(--plum-700);
+  --ink-3: var(--plum-500);
+  --line: var(--tianjie-border);
+  --brand: var(--pink-500);
+  --brand-soft: var(--pink-100);
+  --brand-ink: #FFFFFF;
+  --r-sm: var(--tianjie-radius-sm);
+  --r-md: var(--tianjie-radius-md);
+  --r-lg: var(--tianjie-radius-lg);
+  --r-pill: 999px;
+  --shadow-1: 0 2px 8px rgba(74, 63, 69, .05), 0 1px 3px rgba(74, 63, 69, .03);
+  --shadow-2: 0 8px 24px -6px rgba(255, 107, 155, .18);
+  --shadow-3: 0 18px 44px -12px rgba(74, 63, 69, .18);
+
+  /* 侧边栏渐变 — 紫粉 */
+  --sidebar-gradient: linear-gradient(180deg, var(--purple-500) 0%, var(--pink-300) 100%);
+
+  /* 模块情绪色 — 赤橙黄绿青蓝紫粉 */
+  --c-home: var(--purple-500);
+  --c-diet: var(--green-500);
+  --c-skincare: var(--pink-500);
+  --c-fitness: var(--orange-500);
+  --c-shaping: var(--cyan-500);
+  --c-finance: var(--yellow-500);
+  --c-stocks: var(--red-500);
+  --c-english: var(--blue-500);
+  --c-mood: var(--purple-500);
+
+  /* 状态色 */
+  --state-success: var(--green-500);
+  --state-warning: var(--yellow-500);
+  --state-error: #FF7A7A;
+  --state-info: var(--blue-500);
+
+  /* 字体 */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "MiSans", system-ui, sans-serif;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--tianjie-background);
+    --color-foreground: var(--tianjie-foreground);
+    --color-card: var(--tianjie-card);
+    --color-card-foreground: var(--tianjie-card-foreground);
+    --color-popover: var(--tianjie-popover);
+    --color-popover-foreground: var(--tianjie-popover-foreground);
+    --color-primary: var(--tianjie-primary);
+    --color-primary-foreground: var(--tianjie-primary-foreground);
+    --color-muted: var(--tianjie-muted);
+    --color-muted-foreground: var(--tianjie-muted-foreground);
+    --color-border: var(--tianjie-border);
+    --color-input: var(--tianjie-input);
+    --color-ring: var(--tianjie-ring);
+    --radius-sm: var(--tianjie-radius-sm);
+    --radius-md: var(--tianjie-radius-md);
+    --radius-lg: var(--tianjie-radius-lg);
+  }
+  @layer base {
+    body { background: var(--tianjie-background); color: var(--tianjie-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--tianjie-background); }
+      .text-background { color: var(--tianjie-background); }
+      .border-background { border-color: var(--tianjie-background); }
+      .ring-background { --tw-ring-color: var(--tianjie-background); }
+      .bg-foreground { background-color: var(--tianjie-foreground); }
+      .text-foreground { color: var(--tianjie-foreground); }
+      .border-foreground { border-color: var(--tianjie-foreground); }
+      .ring-foreground { --tw-ring-color: var(--tianjie-foreground); }
+      .bg-card { background-color: var(--tianjie-card); }
+      .text-card { color: var(--tianjie-card); }
+      .border-card { border-color: var(--tianjie-card); }
+      .ring-card { --tw-ring-color: var(--tianjie-card); }
+      .bg-card-foreground { background-color: var(--tianjie-card-foreground); }
+      .text-card-foreground { color: var(--tianjie-card-foreground); }
+      .border-card-foreground { border-color: var(--tianjie-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--tianjie-card-foreground); }
+      .bg-popover { background-color: var(--tianjie-popover); }
+      .text-popover { color: var(--tianjie-popover); }
+      .border-popover { border-color: var(--tianjie-popover); }
+      .ring-popover { --tw-ring-color: var(--tianjie-popover); }
+      .bg-popover-foreground { background-color: var(--tianjie-popover-foreground); }
+      .text-popover-foreground { color: var(--tianjie-popover-foreground); }
+      .border-popover-foreground { border-color: var(--tianjie-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--tianjie-popover-foreground); }
+      .bg-primary { background-color: var(--tianjie-primary); }
+      .text-primary { color: var(--tianjie-primary); }
+      .border-primary { border-color: var(--tianjie-primary); }
+      .ring-primary { --tw-ring-color: var(--tianjie-primary); }
+      .bg-primary-foreground { background-color: var(--tianjie-primary-foreground); }
+      .text-primary-foreground { color: var(--tianjie-primary-foreground); }
+      .border-primary-foreground { border-color: var(--tianjie-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--tianjie-primary-foreground); }
+      .bg-muted { background-color: var(--tianjie-muted); }
+      .text-muted { color: var(--tianjie-muted); }
+      .border-muted { border-color: var(--tianjie-muted); }
+      .ring-muted { --tw-ring-color: var(--tianjie-muted); }
+      .bg-muted-foreground { background-color: var(--tianjie-muted-foreground); }
+      .text-muted-foreground { color: var(--tianjie-muted-foreground); }
+      .border-muted-foreground { border-color: var(--tianjie-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--tianjie-muted-foreground); }
+      .bg-border { background-color: var(--tianjie-border); }
+      .text-border { color: var(--tianjie-border); }
+      .border-border { border-color: var(--tianjie-border); }
+      .ring-border { --tw-ring-color: var(--tianjie-border); }
+      .bg-input { background-color: var(--tianjie-input); }
+      .text-input { color: var(--tianjie-input); }
+      .border-input { border-color: var(--tianjie-input); }
+      .ring-input { --tw-ring-color: var(--tianjie-input); }
+      .bg-ring { background-color: var(--tianjie-ring); }
+      .text-ring { color: var(--tianjie-ring); }
+      .border-ring { border-color: var(--tianjie-ring); }
+      .ring-ring { --tw-ring-color: var(--tianjie-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body>
+<div class="app-frame">
+  <aside class="app-sidebar" data-shared="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-avatar"><i data-lucide="candy"></i></div>
+      <div class="brand-title">是甜姐呀</div>
+      <div class="brand-subtitle">健康·自律·记录</div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-row" data-nav-key="home" data-active="false" data-dom-id="nav-home"><span class="nav-icon" style="--module-color:var(--c-home)"><i data-lucide="layout-grid"></i></span><span class="nav-label whitespace-nowrap">首页</span></a>
+      <a href="diet.html" class="nav-row" data-nav-key="diet" data-active="false" data-dom-id="nav-diet"><span class="nav-icon" style="--module-color:var(--c-diet)"><i data-lucide="utensils"></i></span><span class="nav-label whitespace-nowrap">饮食日记</span></a>
+      <a href="skincare.html" class="nav-row" data-nav-key="skincare" data-active="false" data-dom-id="nav-skincare"><span class="nav-icon" style="--module-color:var(--c-skincare)"><i data-lucide="sparkles"></i></span><span class="nav-label whitespace-nowrap">护肤打卡</span></a>
+      <a href="fitness.html" class="nav-row" data-nav-key="fitness" data-active="false" data-dom-id="nav-fitness"><span class="nav-icon" style="--module-color:var(--c-fitness)"><i data-lucide="dumbbell"></i></span><span class="nav-label whitespace-nowrap">运动健身</span></a>
+      <a href="shaping.html" class="nav-row" data-nav-key="shaping" data-active="true" data-dom-id="nav-shaping"><span class="nav-icon" style="--module-color:var(--c-shaping)"><i data-lucide="person-standing"></i></span><span class="nav-label whitespace-nowrap">塑形训练</span></a>
+      <a href="finance.html" class="nav-row" data-nav-key="finance" data-active="false" data-dom-id="nav-finance"><span class="nav-icon" style="--module-color:var(--c-finance)"><i data-lucide="wallet"></i></span><span class="nav-label whitespace-nowrap">记账理财</span></a>
+      <a href="stocks.html" class="nav-row" data-nav-key="stocks" data-active="false" data-dom-id="nav-stocks"><span class="nav-icon" style="--module-color:var(--c-stocks)"><i data-lucide="trending-up"></i></span><span class="nav-label whitespace-nowrap">股市行情</span></a>
+      <a href="english.html" class="nav-row" data-nav-key="english" data-active="false" data-dom-id="nav-english"><span class="nav-icon" style="--module-color:var(--c-english)"><i data-lucide="languages"></i></span><span class="nav-label whitespace-nowrap">每日英语</span></a>
+      <a href="mood.html" class="nav-row" data-nav-key="mood" data-active="false" data-dom-id="nav-mood"><span class="nav-icon" style="--module-color:var(--c-mood)"><i data-lucide="heart"></i></span><span class="nav-label whitespace-nowrap">今日心情</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="date-card">
+        <div class="date-label">今日日期</div>
+        <div class="date-value" id="sidebar-date">—</div>
+      </div>
+    </div>
+  </aside>
+  <main class="app-main">
+    <div class="page-header">
+      <div class="page-title">塑形训练</div>
+      <div class="page-date"><span id="date-text">—</span> <span style="display:inline-flex;align-items:center;gap:3px;font-size:10px;color:var(--green-500);margin-left:6px;padding:2px 7px;background:var(--green-100);border-radius:999px;vertical-align:middle"><i data-lucide="wifi" style="width:10px;height:10px"></i>已联网</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon-dot" style="--module-color:var(--c-shaping)"></span>本周计划</div>
+      <div class="progress-block">
+        <div class="progress-text">已完成 <span id="plan-done">0</span> / <span id="plan-total">0</span></div>
+        <div class="progress-wrap"><div class="progress-bar" id="plan-bar" style="width:0%"></div></div>
+      </div>
+      <div id="plan-list"></div>
+      <div class="add-row">
+        <input id="add-input-plan" class="add-input" type="text" placeholder="添加训练项目，如“卷腹 3×20”">
+        <button class="btn-add-inline" type="button" id="btn-add-plan"><i data-lucide="plus"></i>添加</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon-dot" style="--module-color:var(--c-shaping)"></span>训练心得</div>
+      <textarea id="note-area" class="note-area" placeholder="今日训练感受/心得…"></textarea>
+    </div>
+  </main>
+</div>
+<script>lucide.createIcons();</script>
+
+    <style id="critical-layout">
+      *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+      body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);min-height:100vh;overscroll-behavior:none;-webkit-overflow-scrolling:touch}
+      .app-frame{display:flex;width:100%;max-width:480px;margin:0 auto;min-height:100vh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+      .app-sidebar{width:80px;flex-shrink:0;background:linear-gradient(180deg,var(--purple-500) 0%,var(--pink-300) 100%);padding:14px 6px;display:flex;flex-direction:column;gap:10px}
+      .sidebar-brand{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:8px}
+      .brand-avatar{width:38px;height:38px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-1)}
+      .brand-avatar svg{width:20px;height:20px;color:var(--pink-500)}
+      .brand-title{font-size:12px;font-weight:700;color:#fff;text-align:center;word-break:keep-all}
+      .brand-subtitle{font-size:10px;color:rgba(255,255,255,.85);text-align:center}
+      .sidebar-nav{display:flex;flex-direction:column;gap:6px;flex:1}
+      .nav-row{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border-radius:12px;color:rgba(255,255,255,.92);text-decoration:none;transition:background .15s}
+      .nav-row[data-active="true"]{background:rgba(255,255,255,.28);color:#fff;font-weight:600}
+      .nav-icon{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;color:var(--module-color,var(--surface))}
+      .nav-row[data-active="true"] .nav-icon{background:rgba(255,255,255,.45);color:var(--module-color,var(--surface))}
+      .nav-icon svg{width:14px;height:14px}
+      .nav-label{font-size:10px;line-height:1.1;text-align:center;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+      .sidebar-footer{margin-top:auto}
+      .date-card{background:rgba(255,255,255,.25);border-radius:12px;padding:8px 4px;color:#fff;text-align:center}
+      .date-label{font-size:10px;opacity:.9}
+      .date-value{font-size:10px;font-weight:600;margin-top:4px;line-height:1.3}
+      .app-main{flex:1;padding:16px;overflow-y:auto}
+      .page-header{margin-bottom:16px}
+      .page-title{font-size:20px;font-weight:700;color:var(--ink);line-height:1.2}
+      .page-date{font-size:13px;color:var(--ink-2);margin-top:4px}
+      .card{background:var(--surface);border-radius:var(--r-lg);padding:16px;margin-bottom:12px;box-shadow:var(--shadow-1)}
+      .card-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+      .card-title .icon-dot{width:8px;height:8px;border-radius:50%;background:var(--module-color,var(--brand))}
+      .module-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+      .module-cell{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px;border-radius:var(--r-md);background:var(--surface);box-shadow:var(--shadow-1);text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+      .module-cell:hover{transform:translateY(-2px);box-shadow:var(--shadow-2)}
+      .module-cell .mod-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--module-soft,var(--brand-soft));color:var(--module-color,var(--brand))}
+      .module-cell .mod-icon svg{width:18px;height:18px}
+      .module-cell .mod-name{font-size:13px;font-weight:600}
+      .module-cell .mod-hint{font-size:11px;color:var(--ink-3)}
+      .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+      .kpi-cell{text-align:center;padding:12px 8px;background:var(--surface-2);border-radius:var(--r-md)}
+      .kpi-value{font-size:18px;font-weight:700;color:var(--ink)}
+      .kpi-label{font-size:11px;color:var(--ink-2);margin-top:4px}
+      .todo-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+      .todo-row:last-child{border-bottom:none;padding-bottom:0}
+      .todo-check{width:20px;height:20px;border-radius:6px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--surface)}
+      .todo-row.done .todo-check{background:var(--green-500);border-color:var(--green-500);color:#fff}
+      .todo-text{font-size:13px;color:var(--ink)}
+      .todo-row.done .todo-text{color:var(--ink-3);text-decoration:line-through}
+      .badge{display:inline-flex;align-items:center;padding:3px 8px;border-radius:var(--r-pill);font-size:11px;font-weight:500;background:var(--brand-soft);color:var(--brand)}
+      .bar-chart{display:flex;align-items:flex-end;justify-content:space-around;height:140px;padding:14px;background:var(--surface-2);border-radius:var(--r-md);gap:10px}
+      .bar-group{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+      .bar{ width:28px;background:var(--bar-color,var(--c-shaping));border-radius:6px 6px 0 0;min-height:4px}
+      .bar-label{font-size:10px;color:var(--ink-3)}
+      .bar-value{font-size:11px;font-weight:600;color:var(--ink)}
+      .focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+      .focus-cell{padding:12px;border-radius:var(--r-md);background:var(--surface-2);display:flex;flex-direction:column;gap:4px}
+      .focus-name{font-size:12px;font-weight:600;color:var(--ink)}
+      .focus-hint{font-size:11px;color:var(--ink-3)}
+      .btn-primary{width:100%;margin-top:12px;padding:10px;border-radius:var(--r-md);border:none;background:var(--module-color,var(--brand));color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+      .btn-primary svg{width:16px;height:16px}
+    </style>
+    <style>
+      .progress-block{margin-bottom:12px}
+      .progress-text{font-size:12px;color:var(--ink-2);margin-bottom:6px;font-weight:500}
+      .progress-text span{color:var(--c-shaping);font-weight:700}
+      .progress-wrap{background:var(--surface-2);border-radius:var(--r-pill);height:10px;overflow:hidden}
+      .progress-bar{height:100%;background:linear-gradient(90deg,var(--c-shaping),var(--green-500));border-radius:var(--r-pill);transition:width .3s}
+      .check-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer;user-select:none}
+      .check-row:last-child{border-bottom:none;padding-bottom:0}
+      .check-box{width:22px;height:22px;border-radius:7px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;transition:background .15s,border-color .15s}
+      .check-row.done .check-box{background:var(--c-shaping);border-color:var(--c-shaping)}
+      .check-box svg{width:14px;height:14px;opacity:0;transition:opacity .12s}
+      .check-row.done .check-box svg{opacity:1}
+      .check-text{font-size:13px;color:var(--ink);flex:1}
+      .check-row.done .check-text{color:var(--ink-3);text-decoration:line-through}
+      .check-del{flex-shrink:0;width:26px;height:26px;border:none;background:transparent;color:var(--ink-3);border-radius:var(--r-sm);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+      .check-del:hover{background:var(--red-100);color:var(--red-500)}
+      .check-del svg{width:13px;height:13px}
+      .empty-state{text-align:center;padding:14px 8px;font-size:12px;color:var(--ink-3)}
+      .add-row{display:flex;gap:8px;margin-top:12px}
+      .add-input{flex:1;border:1px solid var(--line);border-radius:var(--r-md);padding:9px 12px;font-size:13px;color:var(--ink);background:var(--surface);font-family:inherit;outline:none;transition:border-color .15s,box-shadow .15s}
+      .add-input:focus{border-color:var(--c-shaping);box-shadow:0 0 0 3px var(--cyan-100)}
+      .btn-add-inline{flex-shrink:0;padding:0 16px;border:none;background:var(--c-shaping);color:#fff;border-radius:var(--r-md);font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;font-family:inherit}
+      .btn-add-inline svg{width:14px;height:14px}
+      .note-area{width:100%;min-height:100px;resize:vertical;border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px;font-size:13px;color:var(--ink);background:var(--surface);font-family:inherit;outline:none;transition:border-color .15s,box-shadow .15s;line-height:1.6}
+      .note-area:focus{border-color:var(--c-shaping);box-shadow:0 0 0 3px var(--cyan-100)}
+    </style>
+    <script>
+    (function(){
+      const TODAY = new Date().toISOString().slice(0,10);
+      const KEY = 'tj_shaping_' + TODAY;
+      function loadData(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+      function saveData(d){ localStorage.setItem(KEY, JSON.stringify(d)); }
+      let DATA = loadData();
+      if(!Array.isArray(DATA.plan)){ DATA.plan = [{name:'深蹲 3×15',done:false},{name:'臀桥 3×20',done:false},{name:'平板支撑 60s',done:false},{name:'弓步蹲 3×12',done:false}]; }
+      if(DATA.note == null){ DATA.note = ''; }
+      saveData(DATA);
+
+      function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+      function doneCount(){ return DATA.plan.filter(function(r){ return r.done; }).length; }
+
+      function renderPlan(){
+        const list = document.getElementById('plan-list');
+        const arr = DATA.plan;
+        const done = doneCount();
+        document.getElementById('plan-done').textContent = done;
+        document.getElementById('plan-total').textContent = arr.length;
+        const pct = arr.length > 0 ? Math.round(done / arr.length * 100) : 0;
+        document.getElementById('plan-bar').style.width = pct + '%';
+        if(!arr.length){ list.innerHTML = '<div class="empty-state">还没有训练项目，点击下方“添加”</div>'; return; }
+        list.innerHTML = '';
+        arr.forEach(function(item, idx){
+          const row = document.createElement('div');
+          row.className = 'check-row' + (item.done ? ' done' : '');
+          row.innerHTML =
+            '<span class="check-box"><i data-lucide="check"></i></span>' +
+            '<span class="check-text">' + esc(item.name) + '</span>' +
+            '<button class="check-del" type="button" aria-label="删除"><i data-lucide="x"></i></button>';
+          row.addEventListener('click', function(e){
+            if(e.target.closest('.check-del')) return;
+            DATA.plan[idx].done = !DATA.plan[idx].done;
+            saveData(DATA);
+            renderPlan();
+          });
+          row.querySelector('.check-del').addEventListener('click', function(e){
+            e.stopPropagation();
+            DATA.plan.splice(idx,1);
+            saveData(DATA);
+            renderPlan();
+          });
+          list.appendChild(row);
+        });
+        lucide.createIcons();
+      }
+
+      function addPlan(name){
+        name = (name || '').trim();
+        if(!name) return;
+        DATA.plan.push({name:name, done:false});
+        saveData(DATA);
+        renderPlan();
+      }
+
+      renderPlan();
+
+      const addInput = document.getElementById('add-input-plan');
+      const addBtn = document.getElementById('btn-add-plan');
+      function commit(){ addPlan(addInput.value); addInput.value = ''; addInput.focus(); }
+      addBtn.addEventListener('click', commit);
+      addInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); commit(); } });
+
+      const noteArea = document.getElementById('note-area');
+      noteArea.value = DATA.note || '';
+      noteArea.addEventListener('input', function(){ DATA.note = noteArea.value; saveData(DATA); });
+
+      function fmtDate(){
+        const d = new Date();
+        const y = d.getFullYear(), mo = String(d.getMonth()+1).padStart(2,'0'), da = String(d.getDate()).padStart(2,'0');
+        const w = ['周日','周一','周二','周三','周四','周五','周六'][d.getDay()];
+        return y + '年' + mo + '月' + da + '日 ' + w;
+      }
+      document.getElementById('date-text').textContent = fmtDate();
+      const sd = document.getElementById('sidebar-date'); if(sd) sd.textContent = fmtDate();
+
+      lucide.createIcons();
+    })();
+    </script>
+<script src="../assets/pwa-register.js"></script>
+</body>
+</html>
