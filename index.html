@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-title" content="是甜姐呀">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#FF6B9B">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/app-icon-512.jpg">
+  <link rel="apple-touch-startup-image" href="assets/app-splash.jpg">
+  <title>是甜姐呀</title>
+  <style>
+    html,body{height:100%;margin:0;background:#FFFBFC;color:#4A3F45;font-family:"Inter","Noto Sans SC","PingFang SC",system-ui,sans-serif;display:flex;align-items:center;justify-content:center;text-align:center}
+    .loader{width:44px;height:44px;border:3px solid #FFE4ED;border-top-color:#FF6B9B;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 14px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    p{margin:0;font-size:14px;color:#9E9197}
+  </style>
+</head>
+<body>
+  <div>
+    <div class="loader"></div>
+    <p>正在进入甜姐的小世界…</p>
+  </div>
+  <script>
+    location.replace('pages/home.html');
+  </script>
+</body>
+</html>
