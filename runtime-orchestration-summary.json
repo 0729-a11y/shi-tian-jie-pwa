@@ -1,0 +1,1389 @@
+{
+  "schemaVersion": "1.0",
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": "2026.07.22.00.00.00",
+    "version_source": "skill-release-manifest.json",
+    "release": "prompt-base-cloud-ssot-migration",
+    "read_status": "ok"
+  },
+  "project": {
+    "operation": "create",
+    "resolvedLane": "complex_html_page",
+    "intentProfile": {
+      "caseFamily": "app_design",
+      "sourceType": "user_text",
+      "complexity": "complex",
+      "multiDeviceProject": false,
+      "referenceMaterials": [
+        "微信图片_20260731133243_655_141.jpg"
+      ]
+    },
+    "selectedIntentWorkflowRead": true,
+    "contextRequirementsLoaded": [
+      {
+        "path": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/page-rendering-quality-gate.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/design-artifact-validation.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/delivery-evidence-contract.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "visual-experience/visual-experience-guidelines.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "visual-experience/visual-checkpoint-protocol.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/00-requirement-and-style-intake.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/design-artifact-formats/design-project-file-format.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/orchestration-summary-contract/orchestration-summary-contract.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/orchestration-summary-fields.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "skill-release-manifest.json",
+        "readStatus": "loaded",
+        "bodyRead": true
+      }
+    ],
+    "contextReadScope": "complex_html_page",
+    "readScopeLedger": [
+      {
+        "path": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+        "reason": "lane entry",
+        "ownerLane": "complex_html_page"
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+        "reason": "declared shared kernel",
+        "ownerLane": "complex_html_page"
+      },
+      {
+        "path": "delivery-quality/page-rendering-quality-gate.md",
+        "reason": "quality gate",
+        "ownerLane": "complex_html_page"
+      },
+      {
+        "path": "visual-experience/visual-experience-guidelines.md",
+        "reason": "visual system",
+        "ownerLane": "complex_html_page"
+      }
+    ],
+    "designRead": "个人生活管理 App / 年轻女性用户 / 甜美活泼 / 中高密度卡片 / 避免霓虹彩虹渐变",
+    "designDials": {
+      "layoutVariance": 3,
+      "motionIntensity": 2,
+      "visualDensity": 4
+    },
+    "styleDefinitionBrief": "多巴胺甜美风：篮子粉、薄荷绿、奶油黄渐变，左侧边栏 + 右侧卡片内容，温暖治愈的个人生活管家 App。",
+    "sharedProjectShellContract": {
+      "deviceType": "mobile",
+      "viewportMode": "document-scroll",
+      "navigationShell": "left-sidebar",
+      "typographySystem": "Inter + Noto Sans SC sans-serif",
+      "radiusScale": {
+        "sm": 6,
+        "md": 14,
+        "lg": 20,
+        "max": 20
+      },
+      "surfaceDepthModel": "static surfaces use border/surface layering; floating layers use shadow-2/shadow-3",
+      "primaryColor": "--tianjie-primary",
+      "moduleAccentColors": [
+        "--c-diet",
+        "--c-skincare",
+        "--c-fitness",
+        "--c-shaping",
+        "--c-finance",
+        "--c-stocks",
+        "--c-english"
+      ],
+      "sidebar": {
+        "applies": true,
+        "position": "left",
+        "widthPx": 80,
+        "sharedPartial": "partials/sidebar.html",
+        "activeRule": "only data-active, background tint, and icon color change; geometry stays identical"
+      },
+      "mobileNavigation": {
+        "applies": false
+      }
+    },
+    "generationTree": {
+      "root": {
+        "nodeId": "shared-app-shell",
+        "type": "shared-project-shell",
+        "title": "共享应用外壳",
+        "outputFiles": [
+          "partials/sidebar.html"
+        ],
+        "mutableSlots": [
+          "page-content",
+          "page-title",
+          "active-nav-key"
+        ],
+        "status": "generated",
+        "children": [
+          {
+            "nodeId": "page-home",
+            "type": "page",
+            "title": "首页",
+            "htmlSrc": "pages/home.html",
+            "status": "generated"
+          },
+          {
+            "nodeId": "page-diet",
+            "type": "page",
+            "title": "饮食日记",
+            "htmlSrc": "pages/diet.html",
+            "status": "generated"
+          },
+          {
+            "nodeId": "page-skincare",
+            "type": "page",
+            "title": "护肤打卡",
+            "htmlSrc": "pages/skincare.html",
+            "status": "generated"
+          },
+          {
+            "nodeId": "page-fitness",
+            "type": "page",
+            "title": "运动健身",
+            "htmlSrc": "pages/fitness.html",
+            "status": "generated"
+          },
+          {
+            "nodeId": "page-shaping",
+            "type": "page",
+            "title": "塑形训练",
+            "htmlSrc": "pages/shaping.html",
+            "status": "generated"
+          },
+          {
+            "nodeId": "page-finance",
+            "type": "page",
+            "title": "记账理财",
+            "htmlSrc": "pages/finance.html",
+            "status": "generated"
+          },
+          {
+            "nodeId": "page-stocks",
+            "type": "page",
+            "title": "股市行情",
+            "htmlSrc": "pages/stocks.html",
+            "status": "generated"
+          },
+          {
+            "nodeId": "page-english",
+            "type": "page",
+            "title": "每日英语",
+            "htmlSrc": "pages/english.html",
+            "status": "generated"
+          }
+        ]
+      }
+    },
+    "cssPreflightEvidence": {
+      "command": "node apply-html-head-contract.mjs colors_and_type.css .preflight/preflight.html --title=Preflight --lang=zh-CN --prefix=tianjie",
+      "status": "success",
+      "outputFile": ".preflight/preflight.html",
+      "checks": {
+        "themeVarsPresent": true,
+        "tailwindInlinePresent": true,
+        "semanticFallbackPresent": true,
+        "lucideScriptPresent": true,
+        "htmlThemeClassPresent": true
+      }
+    },
+    "visualQualityCheckpoints": [
+      {
+        "checkpointId": "vq-anchor",
+        "dimension": "visual-anchor",
+        "expected": "左侧粉绿渐变边栏 + 糖果头像 + 是甜姐呀品牌名作为稳定视觉锚点",
+        "evidenceTarget": "partials/sidebar.html"
+      },
+      {
+        "checkpointId": "vq-hierarchy",
+        "dimension": "information-hierarchy",
+        "expected": "顶部日期与标题 → 今日摘要卡片 → 模块数据/列表 → 底部操作，层级清晰",
+        "evidenceTarget": "pages/*.html"
+      },
+      {
+        "checkpointId": "vq-structure",
+        "dimension": "composition-structure",
+        "expected": "左窄边栏固定 + 右主内容区流式滚动，卡片使用圆角与白底，间距统一",
+        "evidenceTarget": "pages/*.html"
+      },
+      {
+        "checkpointId": "vq-implementation",
+        "dimension": "implementation-strategy",
+        "expected": "共享 sidebar partial 复制到每页，模块色通过 CSS 变量注入，Lucide 图标，无外部图片依赖",
+        "evidenceTarget": "partials/sidebar.html"
+      }
+    ],
+    "dispatchPreflightManifest": [
+      {
+        "nodeId": "page-home",
+        "htmlSrc": "pages/home.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/home.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/home.html"
+          ]
+        }
+      },
+      {
+        "nodeId": "page-diet",
+        "htmlSrc": "pages/diet.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/diet.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/diet.html"
+          ]
+        }
+      },
+      {
+        "nodeId": "page-skincare",
+        "htmlSrc": "pages/skincare.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/skincare.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/skincare.html"
+          ]
+        }
+      },
+      {
+        "nodeId": "page-fitness",
+        "htmlSrc": "pages/fitness.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/fitness.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/fitness.html"
+          ]
+        }
+      },
+      {
+        "nodeId": "page-shaping",
+        "htmlSrc": "pages/shaping.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/shaping.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/shaping.html"
+          ]
+        }
+      },
+      {
+        "nodeId": "page-finance",
+        "htmlSrc": "pages/finance.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/finance.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/finance.html"
+          ]
+        }
+      },
+      {
+        "nodeId": "page-stocks",
+        "htmlSrc": "pages/stocks.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/stocks.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/stocks.html"
+          ]
+        }
+      },
+      {
+        "nodeId": "page-english",
+        "htmlSrc": "pages/english.html",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "sharedTemplate": "partials/sidebar.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/english.html"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/english.html"
+          ]
+        }
+      }
+    ],
+    "expectedDispatches": [
+      {
+        "nodeId": "page-home",
+        "pageId": "page-home",
+        "targetPageId": "page-home",
+        "htmlSrc": "pages/home.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/home.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "bb52f0f1c234de475a7944f9b83aa1904aa6f9987386593894d41e75da5e58e1",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:48.733Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-diet",
+        "pageId": "page-diet",
+        "targetPageId": "page-diet",
+        "htmlSrc": "pages/diet.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/diet.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "4aa92817da280472d65c6c35da2646d5c8ef7e13338a9e1647057aae39658631",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:48.830Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-skincare",
+        "pageId": "page-skincare",
+        "targetPageId": "page-skincare",
+        "htmlSrc": "pages/skincare.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/skincare.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "6ca47d5df19c6ceec1c81803cc1fb57fc17c951605555b6f12c7e9be85cc9e8f",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:48.911Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-fitness",
+        "pageId": "page-fitness",
+        "targetPageId": "page-fitness",
+        "htmlSrc": "pages/fitness.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/fitness.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "673deaad46a6c052b6e9b04f84cc011d3aa00a10ee9e86ebbd197a7621e61637",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:48.995Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-shaping",
+        "pageId": "page-shaping",
+        "targetPageId": "page-shaping",
+        "htmlSrc": "pages/shaping.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/shaping.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "e0a41eafb555d7c644c1cc3179fbcfdd2ce5799066f8e141a9831d37969c89d9",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:49.102Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-finance",
+        "pageId": "page-finance",
+        "targetPageId": "page-finance",
+        "htmlSrc": "pages/finance.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/finance.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "ccfd198c6cb9b2ea0257addc53d89300879290abce5a952c4a9d18a5934d8eb8",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:49.183Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-stocks",
+        "pageId": "page-stocks",
+        "targetPageId": "page-stocks",
+        "htmlSrc": "pages/stocks.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/stocks.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "cc3947f0965969937e1dcc41758d935c9022a97f57ad2fa344c6a92eae17e5e3",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:49.268Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-english",
+        "pageId": "page-english",
+        "targetPageId": "page-english",
+        "htmlSrc": "pages/english.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/english.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "db4a427a74c980723cf77b81551eb423a30bac040f1ce6bc7838bdb7eb763883",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-07-31T06:04:49.351Z",
+        "source": "record-dispatch-completion.mjs"
+      }
+    ],
+    "validationRunDiscipline": {
+      "maxFullValidationRuns": 2,
+      "softWarningsTriggerRepair": false,
+      "blockingRepairMode": "targeted-once",
+      "forbiddenRepairTriggers": [
+        "soft-warning-only",
+        "provenance-warning-only",
+        "style-warning-only"
+      ]
+    },
+    "validationHistory": [
+      {
+        "reportPath": "validation-report.json",
+        "reportHash": "c17e172ea4005f56e1ea32f58cf7e9c290818d5bd972a310fa5a708ab9e3af04",
+        "checkedAt": "2026-07-31T06:01:02.839Z",
+        "success": false,
+        "exitCode": 1,
+        "renderBlockingErrorCount": 24,
+        "repairPlanHints": [
+          "mobile-navigation-consistency",
+          "mobile-navigation-consistency",
+          "mobile-navigation-consistency",
+          "mobile-navigation-consistency",
+          "mobile-navigation-consistency",
+          "mobile-navigation-consistency",
+          "mobile-navigation-consistency",
+          "mobile-navigation-consistency",
+          "hardcoded-color-in-body",
+          "hardcoded-color-in-body",
+          "hardcoded-color-in-body",
+          "hardcoded-color-in-body",
+          "hardcoded-color-in-body",
+          "hardcoded-color-in-body",
+          "hardcoded-color-in-body",
+          "hardcoded-color-in-body"
+        ],
+        "errorSignatures": [
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/home.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "eee920a392106c24ce3306337a0e3bb5cf97e6b2e87093577967250c185c5723"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/home.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "dfaf803ec4da0946ddf9340a1738bf3e9eb74aa3b0f50e7a32e185964cb366f5"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/diet.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "518ef98618750e5881b07946563d1ef79355fc60858ddeed2a5fb89a598545e2"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/diet.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "dc8c3cc59d152ae03463d7e00bfaf8dd3d2a491c8ca0d9350d79458f0ecb2d2f"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/skincare.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "dab5e0d9e28d77812ae11cbd456383d76f426da2a2d5d9c44dbda3c511f1c0b9"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/skincare.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "7c2d1c89d570278c01d0b826cbc87a3ff5d9ce185b790732921a481d5f54eed7"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/fitness.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "4806b3992ad2042e1e1f6c14ca78f12491d6c0bbc0f084186347255a89eb38cc"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/fitness.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "1fc4e52f97da02efcbc411f44730e7e517aca09c314d9f39af13f077604cab3d"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/shaping.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "fbf6c9930e4f4f41c30576eb3f05f6e30c8360d907495cf0053fab0742077e1f"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/shaping.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "8d0f50617a21e390bd16b39c3c667ec6a5b1e8ea00f867acc59d5671a0d15c85"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/finance.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "69e79153c704bd64eacc4758983cba0946ef527a35bd290ee61211e14ca3f86b"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/finance.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "a956a6fd367073e26d280d69fe1deb20f6bec745f4eec131b7f8c61afea7a653"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/stocks.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "19f7339f05aeb4f4761a9dad4c2bb015248ac4ee32a518909e7291383d237afb"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/stocks.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "13af998b78f582a3b92067b699ae2786cb2423fe34212164aa519c6880f6bd74"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/english.html: toolCallLedger.source must be main-agent-runtime-trace; found (missing)",
+            "signature": "ce6958574d67196df7ed4fec9f7c3aa93c57754f744d6b13cde53113fa4aa61e"
+          },
+          {
+            "errorClass": "dispatch-changed-files",
+            "normalized": "[dispatch-changed-files] pages/english.html: toolCallLedger.traceDigest is required for trace-sourced discipline audit",
+            "signature": "9dcf1a7d14f77d1c78a46f39f1d779bf63cf279378079f292c2c64fa5cd1a45f"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/home.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "721cdd454e6f152d25494685d0d571b3781afd47ecf8609886f39d8b39243677"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/diet.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "282409fa3285e4f5cf62e9d63fe032e1596d6ea418b2c822a03d305290ba7192"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/skincare.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "a83d87fa887849b8cb996ac04ee0901153f8ea8dcd9eb6903bb12e8e07a07b4a"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/fitness.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "1758c7843047ad340c9a78fa338731475fb13a68ec887686a229da98ff2e8444"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/shaping.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "bdd2c3f86aca1d4499afe4b100d9e87e998483334afb9c92c29e17852f9c75f4"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/finance.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "4d0eb28ba2f10273ebbb6a5009d996eff1c17dbc73d41ff4bb043461a015f15e"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/stocks.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "f7c852c124f19b4520cfa530fcb31b3224cd0562be9592dd7a644490a074dadd"
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "normalized": "[mobile-navigation-consistency] pages/english.html: mobile nav labels must include whitespace-nowrap/truncate so Chinese tab labels do not wrap. Repair: rebuild the Page Packet with Mobile Navigation Contract and copy canonicalNavHtml. If this is post-validation repair, run repair-mobile-navigation-flow.mjs once; do not patch individual span/data-dom-id/class fragments.",
+            "signature": "99ffcfb924e0ba231f9aac758d99743ea859155bb227e38ca712fd7d9c04cb70"
+          }
+        ],
+        "terminalState": null
+      }
+    ],
+    "validationRepairLedger": [
+      {
+        "failedReportPath": "validation-report.json",
+        "failedReportHash": "c17e172ea4005f56e1ea32f58cf7e9c290818d5bd972a310fa5a708ab9e3af04",
+        "repairWorkflowReadPath": "intent-workflows/intent-project-mutation/main-agent-repair-workflow.md",
+        "repairStartedAt": "2026-07-31T06:01:47.797Z",
+        "repairEntryStatus": "started-awaiting-owner-batch-repair",
+        "ownerTriage": [
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/home.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/diet.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/skincare.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/fitness.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/shaping.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/finance.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/stocks.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "main-agent",
+            "errorClass": "mobile-navigation-consistency",
+            "affectedFiles": [
+              "pages/english.html"
+            ],
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "diet.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "english.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "finance.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "fitness.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "home.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "shaping.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "skincare.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          },
+          {
+            "owner": "sub-agent",
+            "errorClass": "hardcoded-color-in-body",
+            "affectedFiles": [
+              "stocks.html"
+            ],
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once"
+          }
+        ],
+        "repairPlanHints": [
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/home.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/diet.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/skincare.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/fitness.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/shaping.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/finance.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/stocks.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "mobile-navigation-consistency",
+            "owner": "main-agent",
+            "repairScope": "all-pages-with-mobile-nav",
+            "strategy": "run_repair_mobile_navigation_once",
+            "affectedFiles": [
+              "pages/english.html"
+            ],
+            "repairReportPath": "mobile-nav-repair-report.json",
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 3
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "diet.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "english.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "finance.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "fitness.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "home.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "shaping.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "skincare.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          },
+          {
+            "errorClass": "hardcoded-color-in-body",
+            "owner": "sub-agent",
+            "repairScope": "targeted-token-replace",
+            "strategy": "targeted_token_replace_once",
+            "affectedFiles": [
+              "stocks.html"
+            ],
+            "repairReportPath": null,
+            "repairAlreadyAttempted": false,
+            "allowSourceRead": "no-full-html-read",
+            "maxValidationRuns": 2
+          }
+        ],
+        "repairActions": [],
+        "revalidationReportPath": null,
+        "revalidationReportHash": null,
+        "revalidationSuccess": null,
+        "blockedReason": null
+      }
+    ],
+    "validationSnapshot": {},
+    "artifactReadinessEvidence": {},
+    "lowValueCallWatchdog": {
+      "noProgressNextAction": "proceed_to_dispatch_or_blocked_summary"
+    },
+    "sourceAuthorityLock": {
+      "locked": true,
+      "authorityType": "user_reference_image",
+      "referenceFile": "微信图片_20260731133243_655_141.jpg",
+      "notes": "采用左侧边栏 + 顶部日期 + 右侧卡片内容的布局结构；配色按用户要求改为多巴胺粉绿黄。"
+    },
+    "repairEntryEvidence": [
+      {
+        "failedReportPath": "validation-report.json",
+        "failedReportHash": "c17e172ea4005f56e1ea32f58cf7e9c290818d5bd972a310fa5a708ab9e3af04",
+        "repairWorkflowReadPath": "intent-workflows/intent-project-mutation/main-agent-repair-workflow.md",
+        "repairStartedAt": "2026-07-31T06:01:47.797Z",
+        "ledgerIndex": 0,
+        "ownerTriageCount": 16,
+        "repairActionCount": 0,
+        "revalidationReportPath": null,
+        "revalidationReportHash": null,
+        "revalidationSuccess": null
+      }
+    ],
+    "mainAgentPostDispatchMutations": []
+  },
+  "designSource": {
+    "operatingMode": "free-explore",
+    "cssFilePath": "colors_and_type.css",
+    "brandPrefix": "tianjie",
+    "deviceType": "mobile",
+    "designLibrary": null,
+    "styleConstraints": {
+      "radiusMax": 20,
+      "staticShadowAlphaMax": 0.05,
+      "allowGradients": true,
+      "primaryHueCount": 1,
+      "moduleAccentHueCount": 3
+    },
+    "styleDefinitionBrief": "多巴胺甜美风：篮子粉、薄荷绿、奶油黄渐变，左侧边栏 + 右侧卡片内容，温暖治愈的个人生活管家 App。"
+  },
+  "pages": [
+    {
+      "nodeId": "page-home",
+      "title": "首页",
+      "htmlSrc": "pages/home.html",
+      "pageType": "dashboard",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "home",
+      "visualNorthStar": "甜美治愈的生活仪表盘：今日待办、7 大模块快捷入口、情绪数据一目了然",
+      "compositionPattern": "asymmetric-two-column-sidebar",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    },
+    {
+      "nodeId": "page-diet",
+      "title": "饮食日记",
+      "htmlSrc": "pages/diet.html",
+      "pageType": "task-driven",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "diet",
+      "visualNorthStar": "记录一日三餐与热量，绿色系健康清爽",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    },
+    {
+      "nodeId": "page-skincare",
+      "title": "护肤打卡",
+      "htmlSrc": "pages/skincare.html",
+      "pageType": "task-driven",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "skincare",
+      "visualNorthStar": "粉色系护肤流程打卡，早晚步骤与周期记录",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    },
+    {
+      "nodeId": "page-fitness",
+      "title": "运动健身",
+      "htmlSrc": "pages/fitness.html",
+      "pageType": "task-driven",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "fitness",
+      "visualNorthStar": "黄色系运动计划与消耗数据，活力感",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    },
+    {
+      "nodeId": "page-shaping",
+      "title": "塑形训练",
+      "htmlSrc": "pages/shaping.html",
+      "pageType": "task-driven",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "shaping",
+      "visualNorthStar": "绿色系局部训练打卡与体态记录",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    },
+    {
+      "nodeId": "page-finance",
+      "title": "记账理财",
+      "htmlSrc": "pages/finance.html",
+      "pageType": "information-dense",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "finance",
+      "visualNorthStar": "黄色系收支明细与预算进度，清晰可管理",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    },
+    {
+      "nodeId": "page-stocks",
+      "title": "股市行情",
+      "htmlSrc": "pages/stocks.html",
+      "pageType": "information-dense",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "stocks",
+      "visualNorthStar": "粉色系大盘指数与自选股票，涨跌分明",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    },
+    {
+      "nodeId": "page-english",
+      "title": "每日英语",
+      "htmlSrc": "pages/english.html",
+      "pageType": "task-driven",
+      "viewportMode": "document-scroll",
+      "activeNavKey": "english",
+      "visualNorthStar": "绿色系每日单词与例句打卡，轻量学习",
+      "continuityAnchors": [
+        "左侧粉绿渐变边栏",
+        "白色圆角卡片",
+        "模块情绪色图标",
+        "顶部日期标题"
+      ]
+    }
+  ],
+  "assets": [],
+  "wiringPlan": [],
+  "hiddenInteractionPlan": []
+}
