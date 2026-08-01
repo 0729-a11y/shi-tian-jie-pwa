@@ -1,0 +1,48 @@
+{
+  "name": "是甜姐呀 — 健康自律记录",
+  "short_name": "是甜姐呀",
+  "description": "甜美治愈的个人生活管家：饮食、护肤、运动、塑形、理财、股市、英语、心情，一站式记录每一天。",
+  "start_url": "pages/home.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFBFC",
+  "theme_color": "#FF6B9B",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["lifestyle", "health", "productivity"],
+  "icons": [
+    {
+      "src": "assets/app-icon-512.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/app-icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/app-icon-512.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/app-icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/app-splash.jpg",
+      "sizes": "720x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ]
+}
