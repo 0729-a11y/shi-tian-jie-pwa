@@ -1,0 +1,20 @@
+{
+  "root": {
+    "nodeId": "shared-app-shell",
+    "type": "shared-project-shell",
+    "title": "共享应用外壳",
+    "outputFiles": ["partials/sidebar.html"],
+    "mutableSlots": ["page-content", "page-title", "active-nav-key"],
+    "status": "generated",
+    "children": [
+      { "nodeId": "page-home", "type": "page", "title": "首页", "htmlSrc": "pages/home.html", "status": "pending" },
+      { "nodeId": "page-diet", "type": "page", "title": "饮食日记", "htmlSrc": "pages/diet.html", "status": "pending" },
+      { "nodeId": "page-skincare", "type": "page", "title": "护肤打卡", "htmlSrc": "pages/skincare.html", "status": "pending" },
+      { "nodeId": "page-fitness", "type": "page", "title": "运动健身", "htmlSrc": "pages/fitness.html", "status": "pending" },
+      { "nodeId": "page-shaping", "type": "page", "title": "塑形训练", "htmlSrc": "pages/shaping.html", "status": "pending" },
+      { "nodeId": "page-finance", "type": "page", "title": "记账理财", "htmlSrc": "pages/finance.html", "status": "pending" },
+      { "nodeId": "page-stocks", "type": "page", "title": "股市行情", "htmlSrc": "pages/stocks.html", "status": "pending" },
+      { "nodeId": "page-english", "type": "page", "title": "每日英语", "htmlSrc": "pages/english.html", "status": "pending" }
+    ]
+  }
+}
