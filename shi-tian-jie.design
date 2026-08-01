@@ -1,0 +1,690 @@
+{
+  "data": [
+    {
+      "id": "page-home",
+      "title": "首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 509,
+        "y": 3084,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-264aa4b5",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/home.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          },
+          {
+            "domId": "module-diet",
+            "targetPageId": "page-diet"
+          },
+          {
+            "domId": "module-skincare",
+            "targetPageId": "page-skincare"
+          },
+          {
+            "domId": "module-fitness",
+            "targetPageId": "page-fitness"
+          },
+          {
+            "domId": "module-shaping",
+            "targetPageId": "page-shaping"
+          },
+          {
+            "domId": "module-finance",
+            "targetPageId": "page-finance"
+          },
+          {
+            "domId": "module-stocks",
+            "targetPageId": "page-stocks"
+          },
+          {
+            "domId": "module-english",
+            "targetPageId": "page-english"
+          },
+          {
+            "domId": "home-banner-install",
+            "targetPageId": "page-install"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-diet",
+      "title": "饮食日记",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 200,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-03d6a361",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/diet.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-skincare",
+      "title": "护肤打卡",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 200,
+        "y": 447,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-43aefddd",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/skincare.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-fitness",
+      "title": "运动健身",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 200,
+        "y": 851,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-f6651045",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/fitness.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-shaping",
+      "title": "塑形训练",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 200,
+        "y": 1227,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-84c60d3f",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/shaping.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-finance",
+      "title": "记账理财",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 200,
+        "y": 1603,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-8af91d1d",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/finance.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-stocks",
+      "title": "股市行情",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 200,
+        "y": 1979,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-9c006296",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/stocks.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-english",
+      "title": "每日英语",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 200,
+        "y": 2355,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-4340b5dc",
+          "measuredAt": 1785484431510
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/english.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-mood",
+      "title": "今日心情",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785476436000,
+      "canvasData": {
+        "x": 0,
+        "y": 3520,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-mood",
+          "measuredAt": 1785476436000
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/mood.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-home",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet",
+            "targetPageId": "page-diet",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-skincare",
+            "targetPageId": "page-skincare",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-fitness",
+            "targetPageId": "page-fitness",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-shaping",
+            "targetPageId": "page-shaping",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-finance",
+            "targetPageId": "page-finance",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-stocks",
+            "targetPageId": "page-stocks",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-english",
+            "targetPageId": "page-english",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mood",
+            "targetPageId": "page-mood",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-install",
+      "title": "安装到主屏幕",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1785558400000,
+      "canvasData": {
+        "x": 200,
+        "y": 3084,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-install",
+          "measuredAt": 1785558400000
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/install.html",
+        "interactions": [
+          {
+            "domId": "install-back-home",
+            "targetPageId": "page-home"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "mobile",
+    "projectName": "是甜姐呀"
+  }
+}
