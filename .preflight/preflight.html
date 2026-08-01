@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preflight</title>
+    <style id="theme-vars">
+:root {
+  /* ========== 是甜姐呀 — 多巴胺配色系统 V2 ========== */
+  /* 核心情绪色：篮子粉(3色阶) / 薰衣草紫(3色阶) / 薄荷绿 / 奶油黄 */
+
+  /* 粉色 — 3 色阶 */
+  --pink-500: #FF6B9B;
+  --pink-300: #FFB3CC;
+  --pink-100: #FFE4ED;
+
+  /* 紫色 — 3 色阶（新增） */
+  --purple-500: #A78BFA;
+  --purple-300: #C4B5FD;
+  --purple-100: #EDE9FE;
+
+  --green-500: #66D2A0;
+  --green-400: #85DDB4;
+  --green-300: #A5E8C8;
+  --green-100: #DDF7EA;
+  --green-50: #EEFBF5;
+
+  --yellow-500: #FFD166;
+  --yellow-400: #FFDA85;
+  --yellow-300: #FFE3A3;
+  --yellow-100: #FFF2D1;
+  --yellow-50: #FFF9E8;
+
+  --cream-50: #FAF7FF;
+  --cream-100: #F5EFFF;
+  --plum-900: #4A3F45;
+  --plum-700: #6B5E65;
+  --plum-500: #9E9197;
+  --plum-300: #D3C9CE;
+  --plum-100: #F2ECEE;
+
+  /* 语义别名 —— apply-html-head-contract 需要 */
+  --tianjie-background: var(--cream-50);
+  --tianjie-foreground: var(--plum-900);
+  --tianjie-card: #FFFFFF;
+  --tianjie-card-foreground: var(--plum-900);
+  --tianjie-popover: #FFFFFF;
+  --tianjie-popover-foreground: var(--plum-900);
+  --tianjie-primary: var(--purple-500);
+  --tianjie-primary-foreground: #FFFFFF;
+  --tianjie-muted: var(--purple-100);
+  --tianjie-muted-foreground: var(--plum-500);
+  --tianjie-border: var(--plum-100);
+  --tianjie-input: var(--cream-100);
+  --tianjie-ring: var(--purple-300);
+  --tianjie-radius-sm: 6px;
+  --tianjie-radius-md: 14px;
+  --tianjie-radius-lg: 20px;
+
+  /* 页面级快捷别名 */
+  --bg: var(--tianjie-background);
+  --foreground: var(--tianjie-foreground);
+  --surface: var(--tianjie-card);
+  --surface-2: var(--tianjie-muted);
+  --ink: var(--plum-900);
+  --ink-2: var(--plum-700);
+  --ink-3: var(--plum-500);
+  --line: var(--tianjie-border);
+  --brand: var(--purple-500);
+  --brand-soft: var(--purple-100);
+  --brand-ink: #FFFFFF;
+  --r-sm: var(--tianjie-radius-sm);
+  --r-md: var(--tianjie-radius-md);
+  --r-lg: var(--tianjie-radius-lg);
+  --r-pill: 999px;
+  --shadow-1: 0 2px 8px rgba(74, 63, 69, .05), 0 1px 3px rgba(74, 63, 69, .03);
+  --shadow-2: 0 8px 24px -6px rgba(167, 139, 250, .18);
+  --shadow-3: 0 18px 44px -12px rgba(74, 63, 69, .18);
+
+  /* 侧边栏渐变 */
+  --sidebar-gradient: linear-gradient(180deg, var(--purple-500) 0%, var(--pink-300) 100%);
+
+  /* 模块情绪色（仅用于图标/小标签/进度条，不作为主 CTA） */
+  --c-home: var(--purple-500);
+  --c-diet: var(--green-500);
+  --c-skincare: var(--pink-500);
+  --c-fitness: var(--yellow-500);
+  --c-shaping: var(--green-400);
+  --c-finance: var(--yellow-400);
+  --c-stocks: var(--pink-500);
+  --c-english: var(--purple-300);
+
+  /* 状态色 */
+  --state-success: var(--green-500);
+  --state-warning: var(--yellow-500);
+  --state-error: #FF7A7A;
+  --state-info: #8ECAE8;
+
+  /* 字体 */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "MiSans", system-ui, sans-serif;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--tianjie-background);
+    --color-foreground: var(--tianjie-foreground);
+    --color-card: var(--tianjie-card);
+    --color-card-foreground: var(--tianjie-card-foreground);
+    --color-popover: var(--tianjie-popover);
+    --color-popover-foreground: var(--tianjie-popover-foreground);
+    --color-primary: var(--tianjie-primary);
+    --color-primary-foreground: var(--tianjie-primary-foreground);
+    --color-muted: var(--tianjie-muted);
+    --color-muted-foreground: var(--tianjie-muted-foreground);
+    --color-border: var(--tianjie-border);
+    --color-input: var(--tianjie-input);
+    --color-ring: var(--tianjie-ring);
+    --radius-sm: var(--tianjie-radius-sm);
+    --radius-md: var(--tianjie-radius-md);
+    --radius-lg: var(--tianjie-radius-lg);
+  }
+  @layer base {
+    body { background: var(--tianjie-background); color: var(--tianjie-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--tianjie-background); }
+      .text-background { color: var(--tianjie-background); }
+      .border-background { border-color: var(--tianjie-background); }
+      .ring-background { --tw-ring-color: var(--tianjie-background); }
+      .bg-foreground { background-color: var(--tianjie-foreground); }
+      .text-foreground { color: var(--tianjie-foreground); }
+      .border-foreground { border-color: var(--tianjie-foreground); }
+      .ring-foreground { --tw-ring-color: var(--tianjie-foreground); }
+      .bg-card { background-color: var(--tianjie-card); }
+      .text-card { color: var(--tianjie-card); }
+      .border-card { border-color: var(--tianjie-card); }
+      .ring-card { --tw-ring-color: var(--tianjie-card); }
+      .bg-card-foreground { background-color: var(--tianjie-card-foreground); }
+      .text-card-foreground { color: var(--tianjie-card-foreground); }
+      .border-card-foreground { border-color: var(--tianjie-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--tianjie-card-foreground); }
+      .bg-popover { background-color: var(--tianjie-popover); }
+      .text-popover { color: var(--tianjie-popover); }
+      .border-popover { border-color: var(--tianjie-popover); }
+      .ring-popover { --tw-ring-color: var(--tianjie-popover); }
+      .bg-popover-foreground { background-color: var(--tianjie-popover-foreground); }
+      .text-popover-foreground { color: var(--tianjie-popover-foreground); }
+      .border-popover-foreground { border-color: var(--tianjie-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--tianjie-popover-foreground); }
+      .bg-primary { background-color: var(--tianjie-primary); }
+      .text-primary { color: var(--tianjie-primary); }
+      .border-primary { border-color: var(--tianjie-primary); }
+      .ring-primary { --tw-ring-color: var(--tianjie-primary); }
+      .bg-primary-foreground { background-color: var(--tianjie-primary-foreground); }
+      .text-primary-foreground { color: var(--tianjie-primary-foreground); }
+      .border-primary-foreground { border-color: var(--tianjie-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--tianjie-primary-foreground); }
+      .bg-muted { background-color: var(--tianjie-muted); }
+      .text-muted { color: var(--tianjie-muted); }
+      .border-muted { border-color: var(--tianjie-muted); }
+      .ring-muted { --tw-ring-color: var(--tianjie-muted); }
+      .bg-muted-foreground { background-color: var(--tianjie-muted-foreground); }
+      .text-muted-foreground { color: var(--tianjie-muted-foreground); }
+      .border-muted-foreground { border-color: var(--tianjie-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--tianjie-muted-foreground); }
+      .bg-border { background-color: var(--tianjie-border); }
+      .text-border { color: var(--tianjie-border); }
+      .border-border { border-color: var(--tianjie-border); }
+      .ring-border { --tw-ring-color: var(--tianjie-border); }
+      .bg-input { background-color: var(--tianjie-input); }
+      .text-input { color: var(--tianjie-input); }
+      .border-input { border-color: var(--tianjie-input); }
+      .ring-input { --tw-ring-color: var(--tianjie-input); }
+      .bg-ring { background-color: var(--tianjie-ring); }
+      .text-ring { color: var(--tianjie-ring); }
+      .border-ring { border-color: var(--tianjie-ring); }
+      .ring-ring { --tw-ring-color: var(--tianjie-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <main>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
