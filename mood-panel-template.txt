@@ -1,0 +1,17 @@
+    <div id="mood" class="card mood-card">
+      <div class="card-title"><span class="icon-dot" style="--module-color:var(--c-mood)"></span>今日心情</div>
+      <div class="mood-subtitle">点一下，告诉我今天感觉怎么样</div>
+      <div class="mood-grid">
+        <button class="mood-btn" data-mood="happy" type="button"><span class="mood-emoji">😊</span><span class="mood-name">开心</span></button>
+        <button class="mood-btn" data-mood="excited" type="button"><span class="mood-emoji">🤩</span><span class="mood-name">兴奋</span></button>
+        <button class="mood-btn" data-mood="calm" type="button"><span class="mood-emoji">😌</span><span class="mood-name">平静</span></button>
+        <button class="mood-btn" data-mood="tired" type="button"><span class="mood-emoji">😴</span><span class="mood-name">疲惫</span></button>
+        <button class="mood-btn" data-mood="sad" type="button"><span class="mood-emoji">😢</span><span class="mood-name">难过</span></button>
+        <button class="mood-btn" data-mood="angry" type="button"><span class="mood-emoji">😠</span><span class="mood-name">生气</span></button>
+        <button class="mood-btn" data-mood="anxious" type="button"><span class="mood-emoji">😰</span><span class="mood-name">焦虑</span></button>
+        <button class="mood-btn" data-mood="loved" type="button"><span class="mood-emoji">🥰</span><span class="mood-name">被爱</span></button>
+      </div>
+      <div class="mood-note-wrap">
+        <textarea class="mood-note" rows="2" placeholder="写下今天的心情小记（可选）..."></textarea>
+      </div>
+    </div>
